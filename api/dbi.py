@@ -1,5 +1,7 @@
 from sqlalchemy.orm import Session
 from api import character_model
+from api.standard_characters import StandardCharacters
+from dataclasses import fields
 
 
 class DBI:
@@ -9,6 +11,8 @@ class DBI:
 
     def __init__(self, db: Session):
         self.db = db
+        for f in fields(StandardCharacters):
+            self.create_character(getattr(StandardCharacters, f.name))
 
     def get_all_characters(self, skip: int = 0, limit: int = 100):
         """
@@ -30,11 +34,10 @@ class DBI:
         """
         Create a new character in the database.
         """
-        db_character = character_model.Character(**character.dict())
-        self.db.add(db_character)
+        self.db.add(character)
         self.db.commit()
-        self.db.refresh(db_character)
-        return db_character
+        self.db.refresh(character)
+        return character
 
     def update_character(self, character_id: int, character: character_model.Character):
         """
@@ -65,3 +68,19 @@ class DBI:
             self.db.delete(db_character)
             self.db.commit()
         return db_character
+
+    def set_hero_status(self, character_id: int, is_hero: bool):
+        """
+        Set hero status for a character.
+        """
+        db_character = (
+            self.db.query(character_model.Character)
+            .filter(character_model.Character.id == character_id)
+            .first()
+        )
+        if db_character:
+            db_character.is_hero = is_hero
+            self.db.commit()
+            self.db.refresh(db_character)
+        return db_character
+
