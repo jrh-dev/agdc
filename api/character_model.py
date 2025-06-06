@@ -31,16 +31,8 @@ class Character(Base):
     during_activation = Column(String, index=True, nullable=True)
     passive = Column(String, index=True, nullable=True)
     actions = Column(Integer, index=True)
+    primary_weapon = Column(String, index=True, nullable=True)
+    secondary_weapon = Column(String, index=True, nullable=True)
+    equipment_slot_1 = Column(String, index=True, nullable=True)
+    equipment_slot_2 = Column(String, index=True, nullable=True)
 
-
-class Equipment(Base):
-    """ SQLAlchemy model for Equipment """
-    __tablename__ = "equipment"
-
-    id = Column(Integer, primary_key=True, index=True)
-    character_id = Column(Integer, index=True)
-    m4a1_pulse_rifle = Column(Boolean, index=True)
-    ithaca_37_shotgun = Column(Boolean, index=True)
-    m4_helmet = Column(Boolean, index=True)
-    body_armor = Column(Boolean, index=True)
-    

@@ -1,0 +1,13 @@
+services:
+  api:
+    container_name: agdc
+    build: ./api/
+    command: "uvicorn api:app --host 0.0.0.0 --port 8000 --reload"
+    ports:
+      - "8000:8000"
+  app:
+    container_name: adgc
+    build: ./app/
+    command: "streamlit run app/Home.py  --server.port 8010"
+    ports:
+      - "8010:8010"

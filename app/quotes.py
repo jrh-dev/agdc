@@ -57,7 +57,7 @@ QUOTES = (
     """,
     """
     Look, man. I only need to know one thing... <br>
-    <strong>where<strong> <br> <strong>they<strong> <br> <strong>are<strong>
+    ...<strong>where<strong>...<strong>they<strong>...<strong>are<strong>.
     """,
     """
     We're in the pipe, five by five.

@@ -25,6 +25,10 @@ class Character(BaseModel):
     during_activation: Optional[str] = None
     passive: Optional[str] = None
     actions: Optional[int] = None
+    primary_weapon: Optional[str] = None
+    secondary_weapon: Optional[str] = None
+    equipment_slot_1: Optional[str] = None
+    equipment_slot_2: Optional[str] = None
 
     class Config:
         orm_mode = True

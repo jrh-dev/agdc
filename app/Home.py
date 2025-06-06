@@ -7,6 +7,8 @@ import logging
 import streamlit as st
 from quotes import get_quote
 from style.styles import centered_quote, custom_h1
+import base64
+from src.utils import check_for_rerun
 
 
 logging.basicConfig(level=logging.INFO)
@@ -16,9 +18,11 @@ st.set_page_config(
     page_title="AGDC", page_icon=":game_die:", initial_sidebar_state="collapsed"
 )
 
+check_for_rerun()
+
 st.html(custom_h1("Another glorious day in the Corps", 45))
 
-st.html(centered_quote(get_quote(), 200))
+st.html(centered_quote(f'"{get_quote()}"', 200, 10))
 
 col_1, col_2 = st.columns(2)
 
