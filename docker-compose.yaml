@@ -1,13 +1,11 @@
 services:
   api:
     container_name: agdc_api
-    build: ./api/
-    command: "uvicorn api.__init__:app --reload --port 8011 --host homeassistant.local"
+    build: ./api
     ports:
       - "8011:8011"
   app:
     container_name: adgc_app
-    build: ./app/
-    command: "streamlit run app/Home.py  --server.port 8012"
+    build: ./app
     ports:
       - "8012:8012"
