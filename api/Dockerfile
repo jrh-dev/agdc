@@ -10,5 +10,5 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 EXPOSE 8011
 
-CMD uvicorn api.__init__:app --reload --port 8011 --host homeassistant.local
+CMD uvicorn api:app --port 8011
 
