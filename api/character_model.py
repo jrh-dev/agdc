@@ -3,7 +3,7 @@
 
 
 from sqlalchemy import Column, Integer, String, Boolean
-from api.database import Base
+from database import Base
 
 
 class Character(Base):

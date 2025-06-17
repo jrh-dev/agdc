@@ -1,6 +1,6 @@
 from sqlalchemy.orm import Session
-from api import character_model
-from api.standard_characters import StandardCharacters
+import character_model
+from standard_characters import StandardCharacters
 from dataclasses import fields
 
 

@@ -6,7 +6,7 @@ It sets up logging to a file named "api.log" and configures the FastAPI app.
 
 import logging
 from fastapi import FastAPI
-from api import endpoints
+import endpoints
 
 logging.basicConfig(filename="api.log", level=logging.INFO)
 
