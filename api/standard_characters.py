@@ -1,6 +1,6 @@
 from dataclasses import dataclass
 
-from character_model import Character
+from api.character_model import Character
 
 
 @dataclass
