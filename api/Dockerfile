@@ -2,12 +2,13 @@ FROM python:3.12-slim
 
 WORKDIR /api
 
-COPY requirements.txt .
+ADD requirements.txt .
+
+ADD . api
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
+EXPOSE 8011
 
-EXPOSE 8000
+CMD uvicorn api.__init__:app --reload --port 8011 --host homeassistant.local
 
-CMD ["uvicorn", "api:app", "--host=0.0.0.0", "--port=8008"]

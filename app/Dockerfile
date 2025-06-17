@@ -8,6 +8,6 @@ ADD . app
 
 RUN pip install --no-cache-dir -r requirements.txt
 
-EXPOSE 8010:8010
+EXPOSE 8012
 
-CMD streamlit run app/Home.py  --server.port 8010
+CMD streamlit run app/Home.py  --server.port 8012
