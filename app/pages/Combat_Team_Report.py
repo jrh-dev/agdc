@@ -12,7 +12,7 @@ from style.styles import custom_h1
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-db = DBI("homeassistant.local:8011")
+db = DBI("localhost:8011")
 
 st.set_page_config(
     page_title="AGDC", page_icon=":game_die:", initial_sidebar_state="collapsed"
