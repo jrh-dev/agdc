@@ -12,7 +12,7 @@ from style.styles import custom_h1
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-db = DBI("http://192.168.68.50:8011")
+db = DBI()
 
 st.set_page_config(
     page_title="AGDC", page_icon=":game_die:", initial_sidebar_state="collapsed"
