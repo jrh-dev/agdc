@@ -2,7 +2,7 @@ import streamlit as st
 from dbi import DBI  # from app.dbi import DBI
 from src.utils import hr_gif
 
-db = DBI("http://localhost:8000")
+db = DBI()
 
 
 def set_display_character(uid: int):
