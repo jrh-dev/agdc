@@ -1,8 +1,8 @@
 FROM python:3.12-slim
 
-WORKDIR /api
+ADD requirements.txt .
 
-ADD . /api
+ADD . api
 
 RUN pip install --no-cache-dir -r requirements.txt
 
