@@ -13,7 +13,7 @@ from src.team_interactions import attack_manager, defense_manager  # from app.sr
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-db = DBI("http://localhost:8000")
+db = DBI("http://homeassistant.local:8011")
 
 st.set_page_config(
     page_title="AGDC", page_icon=":game_die:", initial_sidebar_state="collapsed"
