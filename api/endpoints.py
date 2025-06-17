@@ -1,7 +1,7 @@
 import logging
 from fastapi import Depends, APIRouter, HTTPException
 from sqlalchemy.orm import Session
-import character_model, dbi, schemas
+from api import character_model, dbi, schemas
 from database import SessionLocal, engine
 
 character_model.Base.metadata.create_all(bind=engine)
