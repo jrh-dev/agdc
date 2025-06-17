@@ -7,7 +7,7 @@ import base64
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-db = DBI("http://localhost:8000")
+db = DBI()
 
 @st.cache_data
 def alpha_sector():
