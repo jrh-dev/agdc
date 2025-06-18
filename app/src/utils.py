@@ -68,11 +68,11 @@ def gif_maker(img_path: str):
 
 @st.cache_data
 def hr_gif():
-    return gif_maker("app/images/heartrate.gif")
+    return gif_maker("images/heartrate.gif")
 
 @st.cache_data
 def motion_gif():
-    return gif_maker("app/images/motiontracker.gif")
+    return gif_maker("images/motiontracker.gif")
 
 def check_for_rerun():
     """
