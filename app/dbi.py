@@ -4,7 +4,7 @@ import requests
 class DBI:
     """class for all api interactions for streamlit app"""
 
-    def __init__(self, url: str):
+    def __init__(self, url: str = None):
         if not url:
             url = os.environ.get("API_URL")
         self.url = url
