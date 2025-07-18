@@ -4,7 +4,9 @@ import requests
 class DBI:
     """class for all api interactions for streamlit app"""
 
-    def __init__(self, url: str = "http://192.168.68.68:8011"):
+    def __init__(self, url: str):
+        if not url:
+            url = os.environ.get("API_URL")
         self.url = url
         self.header = {
             "accept": "application/json",
