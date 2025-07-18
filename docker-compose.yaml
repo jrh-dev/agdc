@@ -9,3 +9,5 @@ services:
     build: ./app
     ports:
       - "8012:8012"
+    environment:
+      - API_URL=${API_URL}
